@@ -1,4 +1,4 @@
 .PHONY: push
 
 push:
-	 rsync . -rz porzecanski.com:./porzecanski.com --progress
+	 rsync . -rlptz --delete porzecanski.com:./porzecanski.com --progress --exclude '/.git' --exclude '.gitignore' --filter="dir-merge,- .gitignore"
